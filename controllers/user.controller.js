@@ -125,7 +125,8 @@ const forgotPassword = async (req, res) => {
       const tokenString = generateRandomString(20);
       const mailId = req.body.email;
       // Reset Link
-      const resetLink = `${process.env.RESET_LINK}?token=${tokenString}&email=${mailId}`;
+      // const resetLink = `${process.env.RESET_LINK}?token=${tokenString}&email=${mailId}`;
+      const resetLink = `https://netlify-kitchen-recipe-management.netlify.app/reset-password?token=${tokenString}&email=${mailId}`;
 
       const message = `<p>Hello ${userExists.username},</p>
               <p>
